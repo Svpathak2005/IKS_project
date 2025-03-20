@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Indian Temple Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #CFB53B;
+            --light-gold: #F8F0E3;
+            --dark-gold: #996515;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--light-gold), #FFF8DC);
+        }
+
+        nav {
+            background: rgba(212, 175, 55, 0.95);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .header-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+                        url('./Meenakshi Temple, Madurai.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        .header-content {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .header-section h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            color: var(--light-gold);
+            line-height: 1.2;
+        }
+
+        .header-subtitle {
+            color: var(--light-gold);
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--light-gold);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .section-spacer {
+            margin: 6rem 0;
+        }
+
+        .temple-info {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            line-height: 1.6;
+            margin: 4rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .temple-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .temple-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .temple-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .temple-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .temple-card-content {
+            padding: 1.5rem;
+        }
+
+        .section-title {
+            color: var(--dark-gold);
+            font-size: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .check-icon {
+            color: green;
+            margin-right: 8px;
+        }
+
+        .location-icon {
+            color: #D4AF37;
+            margin-right: 8px;
+        }
+
+        .temple-history {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 4rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .temple-diagram {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .diagram-image {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .diagram-image img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .diagram-text {
+            flex: 1;
+        }
+
+        .temple-details {
+            background: var(--light-gold);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 4rem 0;
+        }
+
+        .dynasty-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+        }
+
+        .footer {
+            background-color: #000;
+            color: var(--light-gold);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .footer p {
+            color: var(--light-gold);
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .read-more-btn {
+            background: var(--primary-gold);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .read-more-btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 20px;
+            position: relative;
+            animation: modalFadeIn 0.5s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-close {
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="North indian Architecture.html">North Temples</a></li>
+            <li><a href="south indian architecture.html">South Temples</a></li>
+            <li><a href="#compare">Compare</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-section">
+        <div class="header-content">
+            <h1>South Indian<br>Temple Architecture</h1>
+            <p class="header-subtitle">Exploring the majestic Dravidian architectural marvels that have stood the test of time</p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </div>
+
+    <div class="content-section">
+        <div class="temple-info">
+            <p>South Indian temples, known as Dravidian temples, represent one of the most remarkable architectural traditions in world history. These magnificent structures evolved over centuries through the patronage of various dynasties including the Pallavas, Cholas, Pandyas, Vijayanagara, and Nayaka rulers. The temples serve not only as places of worship but also as centers of art, culture, education, and social gathering.</p>
+        </div>
+
+        <div class="section-spacer"></div>
+
+        <div class="temple-history">
+            <h2 class="section-title">Historical Evolution</h2>
+            <p>The evolution of South Indian temple architecture can be traced through distinct periods:</p>
+            
+            <div class="dynasty-section">
+                <h3>Pallava Period (600-900 CE)</h3>
+                <p>The Pallavas initiated the transition from rock-cut architecture to structural temples. The Shore Temple at Mahabalipuram and the temples at Kanchipuram showcase their architectural innovations.</p>
+            </div>
+
+            <div class="dynasty-section">
+                <h3>Chola Period (900-1200 CE)</h3>
+                <p>The Cholas perfected the art of temple building, creating massive temples like Brihadeeswarar Temple. They introduced the concept of multiple enclosures and elaborate sculptural work.</p>
+            </div>
+
+            <div class="dynasty-section">
+                <h3>Vijayanagara Period (1336-1565 CE)</h3>
+                <p>This era saw the creation of massive temple complexes with multiple pillared halls and towering gopurams. The temples became cities in themselves, with elaborate markets and festival mandapas.</p>
+            </div>
+        </div>
+
+        <div class="section-spacer"></div>
+
+        <h2 class="section-title">Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <p><span class="check-icon">✅</span> <strong>Gopurams (Gateway Towers):</strong> These are towering structures at the entrance, covered in detailed carvings and vibrant sculptures of deities, mythological stories, and celestial beings.</p>
+            </div>
+            <div class="feature-item">
+                <p><span class="check-icon">✅</span> <strong>Vimana (Sanctum Tower):</strong> Unlike North Indian temples, the vimana above the sanctum is shorter and pyramid-shaped.</p>
+            </div>
+            <div class="feature-item">
+                <p><span class="check-icon">✅</span> <strong>Pillared Mandapas:</strong> Large halls with ornately carved pillars, often depicting Hindu gods, mythical creatures, and dancers.</p>
+            </div>
+            <div class="feature-item">
+                <p><span class="check-icon">✅</span> <strong>Temple Tanks:</strong> Almost all major South Indian temples have a sacred water tank or pond used for rituals.</p>
+            </div>
+            <div class="feature-item">
+                <p><span class="check-icon">✅</span> <strong>Material Used:</strong> Built primarily using granite and sandstone, which are abundant in the region.</p>
+            </div>
+            <div class="feature-item">
+                <p><span class="check-icon">✅</span> <strong>Ornamentation:</strong> Intricate sculptures of gods, goddesses, animals, and celestial beings cover the temple walls.</p>
+            </div>
+        </div>
+
+        <div class="section-spacer"></div>
+
+        <div class="temple-diagram">
+            <div class="diagram-image">
+                <img src="./digram of the image.png" alt="Temple Structure Diagram">
+            </div>
+            <div class="diagram-text">
+                <h3>Temple Structure Components</h3>
+                <ul>
+                    <li><strong>Garbhagriha (Sanctum):</strong> The innermost sanctuary where the main deity resides</li>
+                    <li><strong>Vimana:</strong> The pyramidal roof structure above the sanctum</li>
+                    <li><strong>Mandapa:</strong> Pillared hall leading to the sanctum</li>
+                    <li><strong>Gopuram:</strong> Monumental entrance tower</li>
+                    <li><strong>Prakara:</strong> Concentric enclosure walls</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-spacer"></div>
+
+        <div class="temple-details">
+            <h2 class="section-title">Architectural Significance</h2>
+            <p>South Indian temples are renowned for their:</p>
+            <ul>
+                <li><strong>Mathematical Precision:</strong> The temples follow precise mathematical and astronomical principles in their layout</li>
+                <li><strong>Sculptural Excellence:</strong> Every surface is adorned with intricate sculptures telling stories from Hindu mythology</li>
+                <li><strong>Engineering Marvel:</strong> The temples demonstrate advanced understanding of weight distribution and structural stability</li>
+                <li><strong>Acoustic Design:</strong> Many temples feature musical pillars and spaces with unique acoustic properties</li>
+            </ul>
+        </div>
+
+        <div class="section-spacer"></div>
+
+        <h2 class="section-title">Famous Examples</h2>
+        <div class="temple-examples">
+            <div class="temple-card" onclick="openModal('brihadeeswara')">
+                <img src="./Brihadeeswarar Temple.png" alt="Brihadeeswarar Temple" loading="lazy">
+                <div class="temple-card-content">
+                    <h3><span class="location-icon">📌</span>Brihadeeswarar Temple</h3>
+                    <p>Built by the Chola king Raja Raja Chola I, known for its massive vimana.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+            </div>
+
+            <div class="temple-card" onclick="openModal('meenakshi')">
+                <img src="./Meenakshi Temple, Madurai.png" alt="Meenakshi Temple" loading="lazy">
+                <div class="temple-card-content">
+                    <h3><span class="location-icon">📌</span>Meenakshi Temple</h3>
+                    <p>Famous for its colorful gopurams and halls filled with sculptures.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+            </div>
+
+            <div class="temple-card" onclick="openModal('virupaksha')">
+                <img src="south indian temple image-1.png" alt="Virupaksha Temple" loading="lazy">
+                <div class="temple-card-content">
+                    <h3><span class="location-icon">📌</span>Virupaksha Temple</h3>
+                    <p>A part of the UNESCO-listed Vijayanagara ruins, known for its grand gopuram.</p>
+                    <button class="read-more-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Temple Detail Modals -->
+        <div id="brihadeeswara-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Brihadeeswarar Temple</h2>
+                    <span class="modal-close" onclick="closeModal('brihadeeswara')">&times;</span>
+                </div>
+                <img src="./Brihadeeswarar Temple.png" alt="Brihadeeswarar Temple" class="modal-image">
+                <div class="modal-body">
+                    <h3>Historical Significance</h3>
+                    <p>Built in 1010 CE by Raja Raja Chola I, the Brihadeeswarar Temple is one of the largest temples in India and a UNESCO World Heritage site.</p>
+                    
+                    <h3>Architectural Marvel</h3>
+                    <p>The temple's vimana (tower) is 216 feet high and is topped by an 80-ton granite block. The entire temple is built from granite, with an estimated 130,000 tons of granite used in its construction.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Massive Vimana tower with octagonal shikhara</li>
+                        <li>Intricate sculptures depicting various forms of Shiva</li>
+                        <li>Large Nandi statue carved from a single rock</li>
+                        <li>Complex system of passages and chambers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="meenakshi-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Meenakshi Temple</h2>
+                    <span class="modal-close" onclick="closeModal('meenakshi')">&times;</span>
+                </div>
+                <img src="./Meenakshi Temple, Madurai.png" alt="Meenakshi Temple" class="modal-image">
+                <div class="modal-body">
+                    <h3>Historical Significance</h3>
+                    <p>The Meenakshi Temple is a historic Hindu temple located in the city of Madurai, Tamil Nadu, India. It is dedicated to Meenakshi, a form of Parvati, and her consort, Sundareshwar, a form of Shiva.</p>
+                    
+                    <h3>Architectural Marvel</h3>
+                    <p>The temple complex is spread over 14 acres and has 14 gopurams (gateway towers), the tallest of which is the southern tower, rising to a height of 170 feet.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Colorful gopurams adorned with thousands of sculptures</li>
+                        <li>Hall of Thousand Pillars with intricate carvings</li>
+                        <li>Sacred temple tank known as Porthamarai Kulam</li>
+                        <li>Annual Meenakshi Tirukalyanam festival</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="virupaksha-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Virupaksha Temple</h2>
+                    <span class="modal-close" onclick="closeModal('virupaksha')">&times;</span>
+                </div>
+                <img src="south indian temple image-1.png" alt="Virupaksha Temple" class="modal-image">
+                <div class="modal-body">
+                    <h3>Historical Significance</h3>
+                    <p>The Virupaksha Temple is located in Hampi, Karnataka, India. It is part of the Group of Monuments at Hampi, designated a UNESCO World Heritage Site.</p>
+                    
+                    <h3>Architectural Marvel</h3>
+                    <p>The temple is dedicated to Lord Virupaksha, a form of Shiva, and has been in continuous worship since its inception in the 7th century AD.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Massive gopuram at the entrance, rising to 165 feet</li>
+                        <li>Intricate carvings and sculptures throughout the temple</li>
+                        <li>Large temple complex with multiple shrines and mandapas</li>
+                        <li>Annual chariot festival attracting thousands of devotees</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-spacer"></div>
+
+        <div class="temple-info">
+            <h2 class="section-title">Cultural Impact</h2>
+            <p>These temples continue to be living monuments, actively used for worship and cultural activities. They have played a crucial role in preserving and promoting Indian art, architecture, dance, music, and traditions through the centuries.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2021 Temple Architecture</p>  
+        <p>developed by group 8 IKS</p>
+    </div>
+
+    <script>
+        function openModal(temple) {
+            document.getElementById(temple + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(temple) {
+            document.getElementById(temple + '-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>

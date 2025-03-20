@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #CFB53B;
+            --light-gold: #F8F0E3;
+            --dark-gold: #996515;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--light-gold), #FFF8DC);
+        }
+        
+        nav {
+            background: rgba(212, 175, 55, 0.95);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .content {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 2rem;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-gold);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .temple-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .temple-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .temple-name {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .temple-style {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .temple-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .temple-diagram {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+        }
+        
+        .feature-list {
+            margin-top: 1.5rem;
+        }
+        
+        .feature-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary-gold);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+        
+        .shared-elements {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .footer {
+            background-color: #000;
+            color: var(--light-gold);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .footer p {
+            color: var(--light-gold);
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#north">North Temples</a></li>
+            <li><a href="#south">South Temples</a></li>
+            <li><a href="#compare">Compare</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content" id="home">
+        <h1>Hindu Temple Architecture</h1>
+        
+        <div class="temple-comparison">
+            <div class="temple-card">
+                <div class="temple-name">Somnath Temple</div>
+                <div class="temple-style">Nagara Style / North Indian Style</div>
+                <img class="temple-img" src="/api/placeholder/450/300" alt="Somnath Temple - North Indian Style">
+                <img class="temple-diagram" src="/api/placeholder/450/300" alt="Northern-style Temple Diagram">
+                
+                <h3>Key Features of Nagara Architecture</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><strong>Shikhara:</strong> Curvilinear spire with rounded contours</div>
+                    <div class="feature-item"><strong>Malaka:</strong> Circular crowning element at the top</div>
+                    <div class="feature-item"><strong>Mandapas:</strong> Multiple peaked halls creating dynamic silhouette</div>
+                    <div class="feature-item"><strong>Overall Style:</strong> Vertical emphasis with graceful curves</div>
+                </div>
+            </div>
+            
+            <div class="temple-card">
+                <div class="temple-name">Brihadeshwara Temple</div>
+                <div class="temple-style">Dravidian Style / South Indian Style</div>
+                <img class="temple-img" src="/api/placeholder/450/300" alt="Brihadeshwara Temple - South Indian Style">
+                <img class="temple-diagram" src="/api/placeholder/450/300" alt="Southern-style Temple Diagram">
+                
+                <h3>Key Features of Dravidian Architecture</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><strong>Vimana:</strong> Pyramidal tower with straight edges</div>
+                    <div class="feature-item"><strong>Capstone:</strong> Square element at the summit</div>
+                    <div class="feature-item"><strong>Structure:</strong> Successively smaller tiers</div>
+                    <div class="feature-item"><strong>Overall Style:</strong> Horizontal emphasis with monumental grandeur</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="shared-elements">
+            <h2>Shared Elements</h2>
+            <p>Despite their distinct visual languages, both styles incorporate:</p>
+            <ul>
+                <li>The <strong>axis mundi</strong> (cosmic axis) connecting earth to heaven</li>
+                <li>The <strong>garbhagriha</strong> (sanctum sanctorum) housing the deity</li>
+                <li>The <strong>plinth</strong> (base platform) elevating the structure</li>
+                <li><strong>Mandapas</strong> (halls) for worshippers</li>
+            </ul>
+            <p>This architectural divergence reflects regional cultural expressions of a shared spiritual tradition, demonstrating how ancient Indian architects adapted temple designs to local aesthetic sensibilities and construction materials.</p>
+        </div>
+        
+        <h2 id="compare">Architectural Comparison</h2>
+        
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Northern Style (Nagara)</th>
+                <th>Southern Style (Dravidian)</th>
+            </tr>
+            <tr>
+                <td>Example</td>
+                <td>Somnath Temple, Gujarat</td>
+                <td>Brihadeshwara Temple, Tamil Nadu</td>
+            </tr>
+            <tr>
+                <td>Tower</td>
+                <td>Curvilinear Shikhara</td>
+                <td>Pyramidal Vimana</td>
+            </tr>
+            <tr>
+                <td>Top Element</td>
+                <td>Circular Malaka</td>
+                <td>Square Capstone</td>
+            </tr>
+            <tr>
+                <td>Tower Shape</td>
+                <td>Curved outline with inward bend</td>
+                <td>Straight edges with clear tiers</td>
+            </tr>
+            <tr>
+                <td>Mandapa</td>
+                <td>Multiple peaked structures</td>
+                <td>Single defined structure</td>
+            </tr>
+            <tr>
+                <td>Visual Emphasis</td>
+                <td>Vertical with flowing curves</td>
+                <td>Horizontal with defined layers</td>
+            </tr>
+            <tr>
+                <td>Predominant in</td>
+                <td>North and Central India</td>
+                <td>South India</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="footer">
+        <p>© 2021 Temple Architecture</p>
+        <p>developed by group 8 IKS</p>
+    </div>
+</body>
+</html>
