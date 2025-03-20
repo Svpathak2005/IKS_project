@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Indian Temple Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #CFB53B;
+            --light-gold: #F8F0E3;
+            --dark-gold: #996515;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--light-gold), #FFF8DC);
+        }
+
+        nav {
+            background: rgba(212, 175, 55, 0.95);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--dark-gold);
+        }
+
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1024px-Konarka_Temple.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .introduction {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-gold);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .key-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .feature-card-content {
+            padding: 1.5rem;
+        }
+
+        .famous-temples {
+            margin-top: 3rem;
+        }
+
+        .temple-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .temple-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .temple-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .temple-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .temple-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .temple-item:hover .temple-image img {
+            transform: scale(1.05);
+        }
+
+        .temple-details {
+            padding: 1.5rem;
+        }
+
+        .temple-details h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-gold);
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        .temple-details p {
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            background-color: var(--primary-gold);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: var(--dark-gold);
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 5px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--primary-gold);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .right::after {
+            left: -13px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: black;
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 10px;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            margin-top: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background-color: #000;
+            color: var(--light-gold);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            color: var(--light-gold);
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-gold);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 18px;
+            }
+
+            .right {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#features">Key Features</a></li>
+            <li><a href="#timeline">Evolution</a></li>
+            <li><a href="#temples">Famous Temples</a></li>
+            
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>North Indian Temple<br>Architecture</h1>
+    </div>
+
+    <div class="content">
+        <div class="introduction" id="introduction">
+            <h2>The Magnificent Nagara Style</h2>
+            <p>North Indian temple architecture, known as the Nagara style, represents one of the most significant architectural traditions in the Indian subcontinent. Dating back to the 5th century CE, these temples are characterized by their distinctive curvilinear towers (shikhara), which resemble beehives or mountain peaks reaching toward the heavens.</p>
+            <p>The Nagara tradition flourished primarily in northern, central, and western India, spanning regions including Rajasthan, Gujarat, Madhya Pradesh, Uttar Pradesh, Odisha, and parts of Maharashtra. Over the centuries, several regional variations emerged, each with its own unique characteristics while maintaining the core principles of Nagara architecture.</p>
+            <p>These temples were not merely places of worship but served as centers of education, art, culture, and community gatherings. The architecture of these structures reflects a deep understanding of mathematics, astronomy, and sacred geometry, embodying both spiritual symbolism and engineering excellence.</p>
+        </div>
+
+        <div id="features">
+            <h2>Key Features of North Indian Temples</h2>
+            <div class="key-features">
+                <div class="feature-card">
+                         <div class="feature-card-content">
+                        <h3>Curvilinear Shikhara</h3>
+                        <p>The most distinctive feature of Nagara temples is the curvilinear shikhara (tower) that rises over the garbhagriha (sanctum). The shikhara symbolizes the cosmic mountain (Mount Meru) and creates a visual journey toward the heavens, representing spiritual ascension.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                     <div class="feature-card-content">
+                        <h3>Mandapa</h3>
+                        <p>The mandapa is a pillared hall that precedes the sanctum, serving as a gathering space for devotees. Often elaborate with ornately carved pillars, these halls might include multiple chambers like the ardhamandapa (entrance porch), mahamandapa (great hall), and antarala (vestibule).</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                     <div class="feature-card-content">
+                        <h3>Intricate Sculptures</h3>
+                        <p>North Indian temples are renowned for their elaborate sculptural programs depicting deities, celestial beings, mythological narratives, and scenes from daily life. These sculptures served both decorative and educational purposes, conveying religious stories to devotees.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-features">
+                <div class="feature-card">
+                    <div class="feature-card-content">
+                        <h3>Amalaka and Kalasha</h3>
+                        <p>The shikhara is typically crowned with a ribbed stone disk called the amalaka, which represents the sun. Above this sits the kalasha, a finial or pot that symbolizes the waters of creation and prosperity.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                     <div class="feature-card-content">
+                        <h3>Panchayatana Layout</h3>
+                        <p>Many mature North Indian temples follow the panchayatana plan, with a main shrine in the center and four smaller shrines at the corners of the platform, dedicated to associated deities. This arrangement symbolizes cosmic harmony and completeness.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                     <div class="feature-card-content">
+                        <h3>Iconographic Programs</h3>
+                        <p>The placement of deities and motifs follows strict iconographic principles. The outer walls typically feature the dikpalas (guardians of directions), various forms of the main deity, and celestial beings, creating a cosmic diagram in stone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline" id="timeline">
+            <h2>Evolution of North Indian Temple Architecture</h2>
+            
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>Early Phase (5th-7th century CE)</h3>
+                    <p>The formative period of Nagara architecture saw simple flat-roofed structures with a small shikhara. The Dashavatara Temple at Deogarh (Uttar Pradesh) represents this early phase, showing the evolution from rock-cut architecture to structural temples.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h3>Classical Phase (8th-10th century CE)</h3>
+                    <p>This period witnessed standardization of the Nagara style with well-defined features. The Temples of Khajuraho were built during this era, showing mature Nagara architecture with complex plans and elaborate ornamentation.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>Regional Variations (10th-13th century CE)</h3>
+                    <p>Regional styles like Maha-Gurjara in Gujarat and Rajasthan, Kalinga style in Odisha, and Chandela style in Central India emerged. The Sun Temple at Konark and Lingaraja Temple at Bhubaneswar exemplify these variations.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h3>Late Medieval Period (14th-17th century CE)</h3>
+                    <p>Temple building declined due to political changes but continued in regions like Rajasthan and Odisha. Fusion of Islamic and Hindu styles began to appear in some regions, especially in border areas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="famous-temples" id="temples">
+            <h2>Famous North Indian Temples</h2>
+            <p>The North Indian landscape is dotted with magnificent temples that stand as testaments to the brilliance of Nagara architecture. Here are some of the most remarkable examples:</p>
+            
+            <div class="temple-list">
+                <div class="temple-item" data-temple="khajuraho">
+                    <div class="temple-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1024px-Konarka_Temple.jpg" alt="Khajuraho Group of Temples">
+                    </div>
+                    <div class="temple-details">
+                        <h4>Khajuraho Group of Temples</h4>
+                        <p>Built by the Chandela dynasty between 950 and 1050 CE, the Khajuraho temples are renowned for their intricate sculptures and architectural excellence.</p>
+                        <button class="read-more">Read More</button>
+                    </div>
+                </div>
+        
+                <div class="temple-item" data-temple="konark">
+                    <div class="temple-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1024px-Konarka_Temple.jpg" alt="Sun Temple, Konark">
+                    </div>
+                    <div class="temple-details">
+                        <h4>Sun Temple, Konark</h4>
+                        <p>Built in the 13th century, this magnificent temple dedicated to the Sun God is designed in the form of a chariot with intricately carved stone wheels.</p>
+                        <button class="read-more">Read More</button>
+                    </div>
+                </div>
+        
+                <div class="temple-item" data-temple="lingaraja">
+                    <div class="temple-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1024px-Konarka_Temple.jpg" alt="Lingaraja Temple">
+                    </div>
+                    <div class="temple-details">
+                        <h4>Lingaraja Temple, Bhubaneswar</h4>
+                        <p>One of the oldest and largest temples in Bhubaneswar, built in the 11th century, it represents the quintessential Kalinga style of Nagara architecture.</p>
+                        <button class="read-more">Read More</button>
+                    </div>
+                </div>
+        
+                <div class="temple-item" data-temple="somnath">
+                    <div class="temple-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1024px-Konarka_Temple.jpg" alt="Somnath Temple">
+                    </div>
+                    <div class="temple-details">
+                        <h4>Somnath Temple, Gujarat</h4>
+                        <p>Rebuilt several times over the centuries, the current structure (1951) embodies traditional Nagara architecture with its impressive shikhara and ornate details.</p>
+                        <button class="read-more">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+
+    <!-- Temple Modal -->
+    <div id="templeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title" id="modalTitle">Temple Name</h2>
+            <img id="modalImage" src="" alt="Temple Image" class="modal-image">
+            <div id="modalDescription"></div>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Temple Architecture</p>  
+        <p>developed by group 8 IKS</p>
+    </div>
+
+    <script>
+        // Temple modal functionality
+        const modal = document.getElementById('templeModal');
+        const closeModal = document.getElementsByClassName('close-modal')[0];
+        const templeItems = document.querySelectorAll('.temple-item');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
+
+        // Temple data
+        const templeData = {
+            khajuraho: {
+                title: "Khajuraho Group of Temples",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Khajuraho_temple.jpg/1024px-Khajuraho_temple.jpg",
+                description: `
+                    <p>The Khajuraho Group of Monuments is a UNESCO World Heritage Site located in Madhya Pradesh, India. Built between 950 and 1050 CE by the Chandela dynasty, these temples are celebrated for their nagara-style architectural symbolism and their intricate sculptures.</p>
+                    
+                    <h3>Architectural Significance</h3>
+                    <p>The temples of Khajuraho showcase the height of North Indian temple architecture. They feature:</p>
+                    <ul>
+                        <li>A granite platform that elevates the structure</li>
+                        <li>A magnificently decorated entrance</li>
+                        <li>The mandapa (entrance hall)</li>
+                        <li>The maha-mandapa (great hall)</li>
+                        <li>The antarala (vestibule)</li>
+                        <li>The garbhagriha (sanctum)</li>
+                        <li>The soaring shikhara (tower) that rises to a height of 31 meters in the Kandariya Mahadeva Temple</li>
+                    </ul>
+                    
+                    <h3>Famous Sculptures</h3>
+                    <p>Khajuraho temples are renowned for their erotic sculptures, which form only about 10% of the total sculptural work. The majority of carvings depict everyday life, mythical creatures, and various deities. These sculptures are characterized by their fluid forms, graceful poses, and attention to detail.</p>
+                    
+                    <h3>Major Temples</h3>
+                    <p>The complex consists of over 20 temples, divided into three groups:</p>
+                    <ul>
+                        <li><strong>Western Group:</strong> Contains the most famous temples including Kandariya Mahadeva, Lakshmana, and Vishvanatha temples</li>
+                        <li><strong>Eastern Group:</strong> Includes the Jain temples such as Parsvanatha and Adinatha</li>
+                        <li><strong>Southern Group:</strong> Features the Duladeo and Chaturbhuja temples</li>
+                    </ul>
+                    
+                    <p>Despite centuries of neglect and environmental exposure, the Khajuraho temples remain one of the most outstanding examples of Indian architectural heritage and a testament to the skill of medieval Indian artisans.</p>
+                `
+            },
+            konark: {
+                title: "Sun Temple, Konark",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1024px-Konarka_Temple.jpg",
+                description: `
+                    <p>The Sun Temple at Konark is a 13th-century CE temple dedicated to the Hindu Sun God Surya. Located in Odisha, India, it is a UNESCO World Heritage Site and one of the most magnificent examples of Kalinga architecture.</p>
+                    
+                    <h3>Chariot Design</h3>
+                    <p>The most distinctive feature of the Konark temple is its design as a colossal chariot of the Sun God with 24 elaborately carved wheels drawn by seven horses. Each wheel is approximately 10 feet in diameter with intricate carvings that function as sundials, able to accurately calculate time.</p>
+                    
+                    <h3>Architectural Features</h3>
+                    <p>The temple originally had a main sanctum tower (deul) reaching 229 feet high, though much of it has collapsed. The surviving structures include:</p>
+                    <ul>
+                        <li>The Jagamohana (audience hall)</li>
+                        <li>The Natya Mandapa (dance hall)</li>
+                        <li>The Bhoga Mandapa (offering hall)</li>
+                        <li>The massive carved wheels along the base</li>
+                        <li>Three images of the Sun God positioned to catch the sun at dawn, noon, and sunset</li>
+                    </ul>
+                    
+                    <h3>Sculptural Wealth</h3>
+                    <p>The temple walls are covered with elaborate carvings including:</p>
+                    <ul>
+                        <li>Celestial figures</li>
+                        <li>Animals and birds</li>
+                        <li>Musicians and dancers</li>
+                        <li>Scenes from courtly life</li>
+                        <li>Erotic sculptures reminiscent of Khajuraho</li>
+                    </ul>
+                    
+                    <h3>Historical Significance</h3>
+                    <p>Built by King Narasimhadeva I of the Eastern Ganga Dynasty, the temple took 12 years to complete. Its construction represents not only religious devotion but also demonstrates the advanced knowledge of astronomy, architecture, and artistic excellence of the period.</p>
+                `
+            },
+            lingaraja: {
+                title: "Lingaraja Temple, Bhubaneswar",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Bhubaneswar_Lingaraja_Temple.JPG/1024px-Bhubaneswar_Lingaraja_Temple.JPG",
+                description: `
+                    <p>The Lingaraja Temple in Bhubaneswar, Odisha, is one of the oldest and largest temples in India. Built in the 11th century CE, it represents the quintessential Kalinga style of Nagara architecture.</p>
+                    
+                    <h3>Architectural Style</h3>
+                    <p>The temple exhibits the mature Kalinga style with its:</p>
+                    <ul>
+                        <li>Deul (sanctum tower) rising to a height of 180 feet</li>
+                        <li>Distinctive curvilinear shikhara adorned with elaborate carvings</li>
+                        <li>Four main components: the garbhagriha (sanctum), the yajna shala (hall of sacrifice), the bhoga mandapa (hall of offering), and the natya shala (dance hall)</li>
+                        <li>180 subsidiary shrines surrounding the main temple</li>
+                    </ul>
+                    
+                    <h3>Religious Significance</h3>
+                    <p>The Lingaraja Temple is dedicated to Lord Shiva, known here as "Tribhuvaneshwara" (Lord of the Three Worlds). It's unique in that it also incorporates worship of Vishnu in the form of Harihara, representing a synthesis of Shaivite and Vaishnavite traditions.</p>
+                    
+                    <h3>Sculptural Elements</h3>
+                    <p>The temple features extensive sculptural work including:</p>
+                    <ul>
+                        <li>Intricate carvings of various deities</li>
+                        <li>Floral and geometric patterns</li>
+                        <li>Depictions of animals, mythical creatures, and celestial beings</li>
+                        <li>Scenes from Hindu mythology</li>
+                    </ul>
+                    
+                    <h3>Cultural Importance</h3>
+                    <p>The temple remains an active place of worship, with several festivals celebrated throughout the year. The most important is Shivaratri, when thousands of devotees visit the temple to seek Lord Shiva's blessings. The temple is notable for its restriction on entry—only Hindus are allowed inside the temple complex.</p>
+                `
+            },
+            somnath: {
+                title: "Somnath Temple, Gujarat",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Somnath_Temple.jpg/1024px-Somnath_Temple.jpg",
+                description: `
+                    <p>The Somnath Temple located in Prabhas Patan, Gujarat, is one of the most sacred pilgrimage sites for Hindus. Dedicated to Lord Shiva, it is known as "the Shrine Eternal" due to being rebuilt several times after repeated destruction.</p>
+                    
+                    <h3>Historical Significance</h3>
+                    <p>The temple has a tumultuous history, having been destroyed and rebuilt several times:</p>
+                    <ul>
+                        <li>The original temple is believed to date back to ancient times</li>
+                        <li>It was destroyed and rebuilt multiple times between the 11th and 18th centuries</li>
+                        <li>The current structure was completed in 1951 after India's independence</li>
+                    </ul>
+                    
+                    <h3>Architectural Features</h3>
+                    <p>The modern Somnath Temple was built in the Chalukya style (a variation of Nagara architecture) and features:</p>
+                    <ul>
+                        <li>A towering shikhara rising to 150 feet</li>
+                        <li>The traditional mandapa, antarala, and garbhagriha arrangement</li>
+                        <li>A Nandi mandapa situated in front of the main temple</li>
+                        <li>Intricate carvings depicting various aspects of Hindu mythology</li>
+                        <li>A flag mast (dhwaja-stambha) reaching 37 feet high</li>
+                    </ul>
+                    
+                    <h3>Spiritual Importance</h3>
+                    <p>Somnath is the first among the twelve Jyotirlingas (sacred shrines of Shiva) in India. The temple is positioned so that there is no land between it and Antarctica, emphasizing its location at the edge of the Indian subcontinent and symbolizing the infinite nature of Lord Shiva.</p>
+                    
+                    <h3>Modern Revival</h3>
+                    <p>The reconstruction of Somnath Temple in the 20th century represents the revival of traditional temple architecture in modern India, maintaining the principles of Nagara style while incorporating contemporary building techniques and materials.</p>
+                `
+            }
+        };
+
+        // Show temple details in modal
+        templeItems.forEach(item => {
+            const readMoreBtn = item.querySelector('.read-more');
+            readMoreBtn.addEventListener('click', () => {
+                const templeId = item.getAttribute('data-temple');
+                const temple = templeData[templeId];
+                
+                modalTitle.textContent = temple.title;
+                modalImage.src = temple.image;
+                modalImage.alt = temple.title;
+                modalDescription.innerHTML = temple.description;
+                
+                modal.style.display = 'block';
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#home') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const navHeight = document.querySelector('nav').offsetHeight;
+                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            });
+        });
+
+        // Image gallery
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                const imgAlt = item.querySelector('img').alt;
+                
+                modalTitle.textContent = imgAlt;
+                modalImage.src = imgSrc;
+                modalImage.alt = imgAlt;
+                modalDescription.innerHTML = `<p>Detailed view of ${imgAlt} - a key architectural element in North Indian temple design.</p>`;
+                
+                modal.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
