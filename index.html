@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Architecture in India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #CFB53B;
+            --light-gold: #F8F0E3;
+            --dark-gold: #996515;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--light-gold), #FFF8DC);
+        }
+
+        nav {
+            background: rgba(212, 175, 55, 0.95);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                        url('./image.png');
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .temple-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .temple-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .temple-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .temple-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .temple-card-content {
+            padding: 1.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background-color: #000;
+            color: var(--light-gold);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            color: var(--light-gold);
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#north">North Temples</a></li>
+            <li><a href="#south">South Temples</a></li>
+            <li><a href="#compare">Compare</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero" id="home">
+        <h1>Temple Architecture<br>in India</h1>
+    </div>
+
+    <div class="content">
+        <div class="temple-grid">
+            <div class="temple-card">
+                <img src="./image.png" alt="North Indian Temple">
+                <div class="temple-card-content">
+                    <h2>North Indian Temples</h2>
+                    <p>Characterized by their curvilinear towers (Shikhara), these temples showcase the Nagara style of architecture with their distinctive beehive-shaped towers...</p>
+                </div>
+            </div>
+
+            <div class="temple-card">
+                <img src="image copy.png" alt="South Indian Temple">
+                <div class="temple-card-content">
+                    <h2>South Indian Temples</h2>
+                    <p>Known for their pyramidal towers (Vimana), these temples exemplify the Dravidian style with their step-like formation and elaborate sculptures...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2021 Temple Architecture</p>  
+        <p>developed by group 8 IKS</p>
+    </div>
+</body>
+</html>
