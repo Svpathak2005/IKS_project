@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #CFB53B;
+            --light-gold: #F8F0E3;
+            --dark-gold: #996515;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--light-gold), #FFF8DC);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: rgba(212, 175, 55, 0.95);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .content {
+            width: min(95%, 1200px);
+            margin: 100px auto 0;
+            padding: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--dark-gold);
+        }
+
+        .temple-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .temple-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .temple-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .temple-img, .temple-diagram {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .temple-img:hover, .temple-diagram:hover {
+            transform: scale(1.02);
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(212, 175, 55, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background-color: var(--primary-gold);
+            color: white;
+            padding: 1.5rem 1rem;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1.2rem 1rem;
+            transition: background 0.3s ease;
+        }
+
+        tr:hover td {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .shared-elements {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .shared-elements ul {
+            list-style-position: inside;
+            padding: 1rem 0;
+        }
+
+        .shared-elements li {
+            margin: 0.8rem 0;
+            padding-left: 1rem;
+        }
+
+        .footer {
+            background-color: #000;
+            color: var(--light-gold);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .content {
+                padding: 0.8rem;
+                margin-top: 80px;
+            }
+
+            .temple-card {
+                padding: 1.5rem;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .shared-elements {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/north.html">North Temples</a></li>
+            <li><a href="/south.html">South Temples</a></li>
+            <li><a href="/comp.html">Compare</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content" id="home">
+        <h1>Hindu Temple Architecture</h1>
+        
+        <div class="temple-comparison">
+            <div class="temple-card">
+                <div class="temple-name">Somnath Temple</div>
+                <div class="temple-style">Nagara Style / North Indian Style</div>
+                <img class="temple-img" src="./somnath.jpeg" alt="Somnath Temple - North Indian Style">
+                <img class="temple-diagram" src="./northenstyle.jpg" alt="Northern-style Temple Diagram">
+                
+                <h3>Key Features of Nagara Architecture</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><strong>Shikhara:</strong> Curvilinear spire with rounded contours</div>
+                    <div class="feature-item"><strong>Malaka:</strong> Circular crowning element at the top</div>
+                    <div class="feature-item"><strong>Mandapas:</strong> Multiple peaked halls creating dynamic silhouette</div>
+                    <div class="feature-item"><strong>Overall Style:</strong> Vertical emphasis with graceful curves</div>
+                </div>
+            </div>
+            
+            <div class="temple-card">
+                <div class="temple-name">Brihadeshwara Temple</div>
+                <div class="temple-style">Dravidian Style / South Indian Style</div>
+                <img class="temple-img" src="./brihadeshwara.jpeg" alt="Brihadeshwara Temple - South Indian Style">
+                <img class="temple-diagram" src="./Southernstyle.jpg" alt="Southern-style Temple Diagram">
+                
+                <h3>Key Features of Dravidian Architecture</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><strong>Vimana:</strong> Pyramidal tower with straight edges</div>
+                    <div class="feature-item"><strong>Capstone:</strong> Square element at the summit</div>
+                    <div class="feature-item"><strong>Structure:</strong> Successively smaller tiers</div>
+                    <div class="feature-item"><strong>Overall Style:</strong> Horizontal emphasis with monumental grandeur</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="shared-elements">
+            <h2>Shared Elements</h2>
+            <p>Despite their distinct visual languages, both styles incorporate:</p>
+            <ul>
+                <li>The <strong>axis mundi</strong> (cosmic axis) connecting earth to heaven</li>
+                <li>The <strong>garbhagriha</strong> (sanctum sanctorum) housing the deity</li>
+                <li>The <strong>plinth</strong> (base platform) elevating the structure</li>
+                <li><strong>Mandapas</strong> (halls) for worshippers</li>
+            </ul>
+            <p>This architectural divergence reflects regional cultural expressions of a shared spiritual tradition, demonstrating how ancient Indian architects adapted temple designs to local aesthetic sensibilities and construction materials.</p>
+        </div>
+        
+        <h2 id="compare">Architectural Comparison</h2>
+        
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Northern Style (Nagara)</th>
+                <th>Southern Style (Dravidian)</th>
+            </tr>
+            <tr>
+                <td>Example</td>
+                <td>Somnath Temple, Gujarat</td>
+                <td>Brihadeshwara Temple, Tamil Nadu</td>
+            </tr>
+            <tr>
+                <td>Tower</td>
+                <td>Curvilinear Shikhara</td>
+                <td>Pyramidal Vimana</td>
+            </tr>
+            <tr>
+                <td>Top Element</td>
+                <td>Circular Malaka</td>
+                <td>Square Capstone</td>
+            </tr>
+            <tr>
+                <td>Tower Shape</td>
+                <td>Curved outline with inward bend</td>
+                <td>Straight edges with clear tiers</td>
+            </tr>
+            <tr>
+                <td>Mandapa</td>
+                <td>Multiple peaked structures</td>
+                <td>Single defined structure</td>
+            </tr>
+            <tr>
+                <td>Visual Emphasis</td>
+                <td>Vertical with flowing curves</td>
+                <td>Horizontal with defined layers</td>
+            </tr>
+            <tr>
+                <td>Predominant in</td>
+                <td>North and Central India</td>
+                <td>South India</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="footer">
+        <p>© 2021 Temple Architecture</p>
+        <p>developed by group 8 IKS</p>
+    </div>
+
+    <script>
+       
+       
+
+        // Animate elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observe temple cards and shared elements
+        document.querySelectorAll('.temple-card, .shared-elements').forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            observer.observe(el);
+        });
+
+        // Add styles for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            .fade-in {
+                animation: fadeIn 0.8s ease forwards;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .temple-img, .temple-diagram {
+                cursor: pointer;
+            }
+
+            .modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                z-index: 1000;
+                cursor: pointer;
+            }
+
+            .modal img {
+                max-width: 90%;
+                max-height: 90vh;
+                margin: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 8px;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Image modal functionality
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        document.body.appendChild(modal);
+
+        document.querySelectorAll('.temple-img, .temple-diagram').forEach(img => {
+            img.addEventListener('click', function() {
+                const modalImg = document.createElement('img');
+                modalImg.src = this.src;
+                modal.innerHTML = '';
+                modal.appendChild(modalImg);
+                modal.style.display = 'block';
+            });
+        });
+
+        modal.addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                nav.style.transform = 'translateY(0)';
+                return;
+            }
+
+            if (currentScroll > lastScroll) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Add hover effect to table rows
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.transition = 'background-color 0.3s ease';
+                if (!this.querySelector('th')) {
+                    this.style.backgroundColor = 'rgba(212, 175, 55, 0.1)';
+                }
+            });
+
+            row.addEventListener('mouseleave', function() {
+                if (!this.querySelector('th')) {
+                    this.style.backgroundColor = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
